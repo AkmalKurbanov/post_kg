@@ -1,0 +1,186 @@
+.hero
+  height: calc( 100vh - 60px )
+  user-select: none
+  @include jfcsb
+  overflow: hidden
+  margin-bottom: rem(20)
+  position: relative
+  
+  @include sm
+    flex-direction: column
+    height: auto
+
+  @include xs
+    text-align: center
+
+  .container
+    @include aic
+  &__text
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    max-width: rem(600)
+    width: 100%
+
+    @include md
+      max-width: rem(460)
+      width: 100%
+      margin-right: rem(15)
+
+    @include sm
+      margin-bottom: rem(20)  
+      max-width: rem(510)
+      margin-right: 0
+
+    @include xs
+      max-width: 100%
+      align-items: center
+      margin-left: 0!important
+      padding: 0 rem(15)
+      
+
+    .title
+      display: block
+      width: 100%
+      text-align: left  
+      
+      @include xs
+        text-align: center
+      
+      
+
+  &__slider
+
+    @include xs
+      padding: 0  
+
+    &-wrap
+      max-width: rem(600)
+      width: 100%
+      margin: rem(20) 0 rem(30)
+      
+      @include md
+        max-width: rem(460)
+
+      
+
+    &-item
+      width: rem(70)
+      height: rem(30)
+      @include aic-jcc
+      margin-right: rem(60)
+
+      &:last-child
+        margin: 0
+      
+      img
+        width: 100%
+        height: 100%
+
+    .swiper-wrapper
+      transition-timing-function: linear    
+
+  &__gallery
+    padding: 0 rem(40)
+    overflow: hidden
+    background: #f2f2f5
+    max-width: rem(570)
+    width: 100%
+    position: absolute
+    top: 0
+    right: 0
+    height: 100%
+
+    @include lg
+      padding: 0 rem(30)
+      max-width: 37%
+    
+    @include md
+      padding: 0 rem(15)
+      margin: auto  
+      max-width: 33%
+
+    @include sm
+      height: rem(350)
+      position: relative
+      max-width: 100%
+      top: auto
+      right: auto
+
+    @include xs
+      height: rem(350)
+
+    
+    
+    &-slide
+      animation: gallerySlideUp 7s linear forwards
+      width: 100%
+      @include jfcsb
+
+      @keyframes gallerySlideUp
+        0%
+          transform: translateY(0)
+          
+        100%
+          transform: translateY(-300px)
+
+      @include sm
+        max-width: rem(510)
+        margin: auto     
+
+      @include xs
+        max-width: 100%
+
+    &-col
+      width: calc( 33.33% - 15px )
+      
+      @include lg
+        width: calc( 50% - 7px )
+
+      @include md
+        width: calc( 50% - 5px )
+        
+      @include sm
+        width: calc( 33.33% - 15px )
+
+      @include xs
+        width: calc( 33.33% - 10px )
+
+      &:nth-child(2)
+        transform: translateY(-100px)
+
+
+      &:last-child
+        @include lg
+          display: none
+
+        @include sm
+          display: block  
+         
+    &-img
+      overflow: hidden
+      border-radius: rem(16)
+      position: relative
+      width: 100%
+      max-width: 100%
+      height: rem(215)
+      margin-bottom: rem(15)
+      @include aic-jcc      
+
+      @include md
+        border-radius: rem(8)
+        height: rem(200)
+
+      @include sm
+        height: rem(200)
+
+      @include xs
+        height: rem(150)
+
+
+      img
+        position: absolute
+        object-fit: cover
+        width: 100%
+        height: 100%  

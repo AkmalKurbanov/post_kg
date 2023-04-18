@@ -1,0 +1,202 @@
+.faq
+  &__wrap
+    margin-top: rem(40)
+    
+    @include sm
+      margin-top: rem(30)
+    
+    @include xs
+      margin-top: rem(20)
+  
+  &__item
+    padding: rem(30) rem(30) rem(30) rem(10)
+    position: relative
+    border-top: rem(1) solid #e2e2e2
+    cursor: pointer
+    transition: $tr
+
+    @include md
+      padding: rem(25) rem(25) rem(25) rem(10)
+
+    @include sm
+      padding: rem(20) rem(20) rem(20) rem(10)
+    
+    @include xs
+      padding:  rem(10)
+
+
+    &:last-child
+      border-bottom: rem(1) solid #e2e2e2
+        
+    &:before,
+    &:after
+      position: absolute
+      content: ''
+      background: $bc
+      transition: $tr
+
+    &:before
+      width: rem(12)
+      height: rem(2)
+      top: rem(42)
+      right: rem(10)
+
+      @include md
+        top: rem(35)
+
+      @include sm
+        top: rem(30)
+
+      @include xs
+        top: rem(20)
+
+    &:after
+      width: rem(2)
+      height: rem(12)
+      right: rem(15)
+      top: rem(37)
+      
+      @include md
+        top: rem(30)
+      
+      @include sm
+        top: rem(25)
+
+      @include xs
+        top: rem(15)
+
+    &-question
+      font-weight: bold
+
+
+      @include sm
+        font-size: rem(13)
+
+    &-answer
+      margin-top: rem(20)
+      display: none
+      font-size: rem(14)
+
+
+      @include sm
+        font-size: rem(12)
+          
+      p
+        margin-bottom: rem(5)  
+        
+
+        @include sm
+          font-size: rem(12)
+        font-size: rem(14)
+        
+        &:last-child
+          margin-bottom: 0
+    
+    &.open
+      &:before,&:after
+       transform: rotate(90deg) 
+        
+      &:before
+        opacity: 0  
+
+  &__flex-wrap 
+    @include jfcsb
+    
+    @include md
+      flex-direction: column
+
+  &__col
+
+    &:first-child
+      max-width: rem(350)
+      min-width: rem(350)
+      width: 100%
+
+      @include md
+        max-width: 100%
+        min-width: auto
+        margin-bottom: rem(30)
+        border: rem(1) solid #e8e4e3        
+
+    &:last-child
+      padding-left: rem(40)
+      
+      @include lg
+        padding-left: rem(20)
+
+      @include md
+        padding-left: 0
+        width: 100%
+
+
+  .tab
+    li
+      a
+        color: $textcolor
+
+      &.current
+        a
+          color: $accent
+    
+    .tabs
+      @include md
+        display: none      
+
+
+  .tabs_item
+    display: none
+
+    &:first-child
+      display: block
+    
+    h3
+      margin-bottom: rem(20)
+      
+      @include lg
+        margin-bottom: rem(15)
+        font-size: rem(16)
+
+    ol,ul
+      @include xs
+      padding-left: rem(15)
+
+    p,li
+      margin-bottom: rem(10)
+      @include lg
+        font-size: rem(14)      
+        margin-bottom: rem(7)
+
+
+  &__question
+    font-size: rem(13)
+    margin-bottom: rem(30)    
+    
+    @include lg
+      margin-bottom: rem(10)
+      
+      &:first-child
+        @include md
+          margin-top: rem(10)
+      
+      &:last-child
+        margin-bottom: 0    
+
+  .question-accordion 
+    font-weight: bold
+    cursor: pointer
+    padding: rem(15)
+    
+    @include md
+      width: 100%
+    
+    span
+      position: relative
+      display: none
+      
+      @include md
+        display: block
+    i
+      position: absolute
+      top: 50%
+      transform: translateY(-80%) rotate(-45deg)
+      right: rem(2)

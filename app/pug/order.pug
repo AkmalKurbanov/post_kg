@@ -1,0 +1,234 @@
+extends layouts/main
+
+block vars
+  - var description;
+  - var keywords;
+  - var ogtitle;
+  - var ogtype;
+  - var ogurl;
+  - var ogimg;
+
+block title
+  | Заказ
+
+block main
+  .wrapper
+    .content
+        include includes/header
+        
+        .order.section
+          form(action="")
+            .container 
+              h2.title.title--h1.title--tac Новое отправление
+            
+              .order__form 
+                .order__input-wrap 
+                  
+                  .input-wrap
+                    .dropdown-info
+                      label(for="name-shop") Название интернет-магазина
+                    .input.input--bordered
+                      input(type='text' id="name-shop") 
+
+
+                  .input-wrap
+                    .dropdown-info
+                      label(for="shipment-name")  Название отправки (необязательно)
+                      span
+                        | ?
+                        .dropdown-info__hidden-text
+                          | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
+                    .input.input--bordered
+                      input(type='text' id="shipment-name") 
+
+                h2 Склад замовлення
+                
+                .order__input-wrap.order__input-wrap--copied 
+                  
+                  .copied-wrap
+                    .input-wrap
+                      .dropdown-info
+                        label(for="classification") Классификация товара
+                        span
+                          | ?
+                          .dropdown-info__hidden-text
+                            | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
+                      .input.input--bordered
+                        input(type='text' id="classification") 
+
+                    .input-wrap
+                      .dropdown-info
+                        label(for="name-product") Название товара (латиницей)
+                      .input.input--bordered
+                        input(type='text' id="name-product") 
+
+                    .input-wrap.sm
+                      .dropdown-info
+                        label(for="count") Количество
+                      .input.input--bordered.input--counter
+                        
+                        .count-minus.disabled 
+                        span
+                          input.counter(type='number' value='1')
+                        .count-plus 
+                        
+                    .input-wrap.sm
+                      .dropdown-info
+                        label(for="cost") Стоимость
+                        span
+                          | ?
+                          .dropdown-info__hidden-text
+                            | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
+                      .input.input--bordered
+                        input(type='text' id="count" value="0,00") 
+
+                    //- .close
+                    //-   svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none')
+                    //-     path(d='M21 2.64111L3.28251 20.3586' stroke='black')
+                    //-     path(d='M21 20.3589L3.28251 2.6414' stroke='black')
+
+                  div
+                    input(type="checkbox" id="no-in-list")
+                    label(for="no-in-list") Нет в перечне      
+
+                .order__input-wrap.order__input-wrap--copied 
+                  
+                  .copied-wrap
+                    .input-wrap
+                      .dropdown-info
+                        label(for="classification") Классификация товара 
+                        span
+                          | ?
+                          .dropdown-info__hidden-text
+                            | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
+                      .input.input--bordered
+                        input(type='text' id="classification") 
+
+                    .input-wrap
+                      .dropdown-info
+                        label(for="name-product") Название товара (латиницей)
+                      .input.input--bordered
+                        input(type='text' id="name-product") 
+
+                    .input-wrap.sm
+                      .dropdown-info
+                        label(for="count") Количество
+                      .input.input--bordered.input--counter
+                        
+                        .count-minus.disabled 
+                        span
+                          input.counter(type='number' value='1')
+                        .count-plus 
+                        
+                    .input-wrap.sm
+                      .dropdown-info
+                        label(for="cost") Стоимость
+                        span
+                          | ?
+                          .dropdown-info__hidden-text
+                            | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
+                      .input.input--bordered
+                        input(type='text' id="count" value="0,00") 
+
+                    .close
+                      svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none')
+                        path(d='M21 2.64111L3.28251 20.3586' stroke='black')
+                        path(d='M21 20.3589L3.28251 2.6414' stroke='black')
+
+                  div
+                    input(type="checkbox" id="no-in-list")
+                    label(for="no-in-list") Нет в перечне      
+
+                .order__input-wrap.order__input-wrap--copied 
+                  
+                  .copied-wrap
+                    .input-wrap
+                      .dropdown-info
+                        label(for="classification") Классификация товара
+                        span
+                          | ?
+                          .dropdown-info__hidden-text
+                            | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
+                      .input.input--bordered
+                        input(type='text' id="classification") 
+
+                    .input-wrap
+                      .dropdown-info
+                        label(for="name-product") Название товара (латиницей)
+                      .input.input--bordered
+                        input(type='text' id="name-product") 
+
+                    .input-wrap.sm
+                      .dropdown-info
+                        label(for="count") Количество
+                      .input.input--bordered.input--counter
+                        
+                        .count-minus.disabled 
+                        span
+                          input.counter(type='number' value='1')
+                        .count-plus 
+                        
+                    .input-wrap.sm
+                      .dropdown-info
+                        label(for="cost") Стоимость
+                        span
+                          | ?
+                          .dropdown-info__hidden-text
+                            | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
+                      .input.input--bordered
+                        input(type='text' id="count" value="0,00") 
+
+                    .close
+                      svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none')
+                        path(d='M21 2.64111L3.28251 20.3586' stroke='black')
+                        path(d='M21 20.3589L3.28251 2.6414' stroke='black')
+
+                  div
+                    input(type="checkbox" id="no-in-list")
+                    label(for="no-in-list") Нет в перечне      
+
+                .order__add-product
+                  span 
+                  p 
+                    b еще один товар
+
+              
+            .order__track-number
+              .container 
+                .order__track-number
+                  .order__track-number-col
+                    .order__track-input
+                      .input-wrap
+                        .dropdown-info
+                          label(for="track-number") Трек-номер
+                        .input
+                          input(type='text' id="track-number") 
+                  
+                  .order__track-number-col
+                    .order__track-number-info 
+                      p Ще не отримали трек номер? Створіть відправлення та додайте трек номер пізніше. Без трек номеру ми не зможемо доставити вашу посилку
+                    
+                    .order__track-number-more
+                      i.angle 
+
+                .order__track-number-hidden
+                  p Tracking Number – це ідентифікатор вашого відправлення.
+                    | Ви отримаєте його від інтернет-магазину електронною поштою, коли замовлення сформовано та оплачено.
+
+                  p Він не містить дефісів, тире або інших спеціальних символів. Зазвичай виглядає так: 9405509699938860829083. Крім цифр, в трек-номері може бути одна або кілька літер: TBA094490876000.
+                  
+                  p tracking number example
+                  
+                  p Не вказуйте в цьому полі номер замовлення (order number), який виглядає ось так: ORDER #108-9223429-1685032 (Amazon) або так: Item number 112122004175 (ebay).
+
+                  p Якщо інтернет-магазин не надає трек-номер, будь-ласка, дочекайтеся електронного листа від Nova Poshta Shopping з проханням зареєструвати відправлення
+            
+            .container
+              .order__btn-wrap    
+                a.btn(href="#") Сохранить отправку 
+
+    include includes/prohibitedPopup
+    include includes/footer
+
+
+  include includes/scripts 

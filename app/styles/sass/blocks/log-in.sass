@@ -1,0 +1,68 @@
+.log-in
+  position: relative
+  
+  .close 
+    width: rem(30)
+    height: rem(30)
+    @include aic-jcc
+    position: fixed
+    top: rem(15) 
+    right: 30px
+    z-index: 2
+    cursor: pointer
+    
+    @include xs
+      position: absolute
+      top: 0
+      right: rem(15)
+      width: rem(20)
+      height: rem(20)
+
+    svg
+      width: 100%
+      height: 100%
+      
+      path
+        transition: $tr
+        
+    &:hover
+      svg
+        path
+          stroke: $accent  
+
+  &__form
+    max-width: rem(370)
+    width: 100%
+    margin: rem(15) auto 0
+
+    .btn
+      width: 100%
+
+    .input-wrap
+      margin-bottom: rem(15)
+
+  &__pass-help
+    @include aic-jfcsb
+    margin-bottom: rem(15)
+
+  &__recover-pass
+    font-size: rem(13)
+    color: $textcolor
+    transition: $tr
+
+    &:hover
+      color: $accent
+
+  &__reg
+    text-align: center
+    margin-top: rem(15)
+    
+    a
+      color: $textcolor
+      transition: $tr
+
+      &:hover
+        color: $accent 
+  
+  .or
+    text-align: center

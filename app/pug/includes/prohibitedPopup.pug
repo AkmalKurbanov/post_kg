@@ -1,0 +1,18 @@
+.prohibited-list.popup-window-wrap
+  
+  .prohibited-list__window.popup-window.radial-block
+    .prohibited-list__window-close.close
+      svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none')
+        path(d='M21 2.64111L3.28251 20.3586' stroke='black')
+        path(d='M21 20.3589L3.28251 2.6414' stroke='black')
+
+    h2.title Запрещенные товары
+      .prohibited-list__window-wrap.radial-block
+        .prohibited-goods
+          each val,index in prohibited
+            .prohibited-goods__item
+              .prohibited-goods__item-img
+                img(src="images/dist/prohibited"+(index+1)+".webp", alt="")
+              .prohibited-goods__item-name=val
+
+    a.btn(href="#") Список запрещенных товаров 

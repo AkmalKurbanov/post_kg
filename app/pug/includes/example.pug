@@ -1,0 +1,19 @@
+.example.section
+  .container 
+    h2.title.title--tac Пример расчета стоимости доставки из США
+    .subtitle.subtitle--tac Включая доставку в любое отделение или курьером к двери
+  .products-slider.products-slider--example
+    .container
+      .swiper.example-js
+        .swiper-wrapper
+
+          each product,index in exampleSlider
+            .swiper-slide
+              .products-slider__item.products-slider__item--ccentered
+                .products-slider__item-img.radial-block 
+                  img(src="images/dist/example"+(index+1)+".webp", alt="")
+                .products-slider__item-info 
+                  .products-slider__item-name=product.name 
+                  .products-slider__item-price=product.price 
+
+                

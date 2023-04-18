@@ -1,0 +1,47 @@
+.call-back
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: rgba($bc, .5)
+  @include aic-jcc
+  z-index: 3
+  transition: $tr
+  opacity: 0
+  pointer-events: none
+  
+  &__window 
+    background-color: $wc
+    padding: rem(40)
+    position: relative
+    transition: $tr
+    opacity: 0
+    transform: translateY(-20px)
+
+    &-wrap
+      @include fww-jfcsb
+
+      .input-wrap
+        margin-top: rem(30)
+
+    &-close      
+      position: absolute
+      top: rem(25)
+      right: rem(25)
+      width: rem(25)
+      height: rem(25)
+      cursor: pointer
+
+  .btn-wrap
+    margin-top: rem(35)
+
+  &.open
+    pointer-events: inherit
+    opacity: 1
+
+    .call-back__window
+      opacity: 1
+      transform: translate(0)

@@ -1,0 +1,94 @@
+.calculator
+  overflow: hidden
+  .arrow
+    position: absolute
+    transform: rotate(20deg)
+    right: calc( 100% + 10px )
+    top: rem(30)
+    
+    @include lg
+      transform: rotate(-45deg) rotateX(180deg)
+
+    @include sm
+      transform: rotate(-120deg) rotateX(180deg)
+      top: auto
+      right: auto
+      bottom: 0
+      left: rem(-50)
+      width: 100px
+
+    @include xs
+      display: none
+
+  &__flex-wrap
+    display: flex
+    align-items: flex-end
+    justify-content: space-between
+    
+    @include sm
+      flex-direction: column-reverse
+  
+  &__col
+    width: 45%
+    position: relative
+    
+    @include md
+      width: calc( 50% - 10px )
+
+    @include sm
+      width: 100%   
+
+  &__calculator
+    padding: rem(30)
+    background-color: #e2e8f0
+    border-radius: rem(16)
+    
+    @include md
+      padding: rem(15)
+
+    &-total
+      padding: rem(20) 0
+      border-bottom: rem(1) solid #cbd5e1
+      @include aic-jfcsb
+
+      @include sm
+        padding: rem(15) 0
+
+      @include xs
+        padding: rem(10) 0
+      
+      &:last-child
+        padding-bottom: 0
+        border: none
+
+      .dropdown-info
+        margin-bottom: 0  
+      
+
+  &__input-wrap
+    @include fww-jfcsb
+    align-items: flex-end
+
+  &__text
+    @include sm
+      text-align: center
+      margin-bottom: rem(30)
+    p
+      margin-bottom: rem(10)
+      line-height: rem(28)  
+
+      @include md
+        font-size: rem(14)
+        line-height: rem(26)  
+
+      &:last-child
+        margin: 0
+    a
+      color: $accent
+
+  .btn-wrap
+    margin-top: rem(20)
+    .btn
+      width: 100%
+      
+        

@@ -1,0 +1,83 @@
+.personal-address
+  
+  &__block-wrap
+    max-width: rem(500)
+    width: 100%
+    margin: auto
+
+  &__address-block
+    padding: rem(25)
+    
+    @include xs
+      padding: rem(10)
+
+
+    &-item
+      @include aic-jfcsb
+      margin-bottom: rem(7)
+      position: relative
+
+      @include xs
+        flex-direction: column
+        align-items: flex-start
+
+      &:last-child
+        margin-bottom: 0
+
+    &-label
+      font-size: rem(12)
+
+      @include xs
+        margin-left: rem(10)
+        margin-bottom: rem(-12)
+        z-index: 1
+        background: $wc
+        padding: rem(2) rem(5)
+        border-radius: rem(5) 
+        
+
+
+    &-info  
+      background: $wc
+      border-radius: rem(16)
+      font-size: rem(14)
+      max-width: rem(300)
+      width: 100%
+      padding: rem(10) rem(30) rem(10) rem(12)
+      position: relative
+
+      @include xs
+        max-width: 100%
+        border-radius: rem(10)
+        font-size: rem(12)
+
+
+    &-copy,
+    &-check
+      width: rem(25)
+      height: rem(25)
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      right: rem(5)
+      @include aic-jcc
+      cursor: pointer
+
+      
+  &__alert 
+    margin-top: rem(30)
+    @include aic-jfcsb
+    border-radius: rem(16)
+    border: rem(1) solid #ec1f2b
+    background-color: #fdf7f6
+    padding: rem(12) rem(15)
+    
+    svg
+      min-width: rem(18)
+      min-height: rem(18)
+      max-width: rem(18)
+      max-height: rem(18)
+      margin-right: rem(15)
+
+    p
+      font-size: rem(12) 

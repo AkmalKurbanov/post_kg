@@ -1,0 +1,182 @@
+.advantages
+
+  .title
+    position: relative
+    display: inline-block
+    margin-top: rem(-10)
+
+    @include lg
+      display: none
+
+    svg
+      position: absolute
+      bottom: 100%
+      left: 100%
+
+      @include sm
+        left: auto
+        right: 0
+
+  &__hidden-title
+    display: none
+
+    @include lg
+      margin-bottom: rem(20)
+
+    .title
+      display: inline-block
+
+      @include sm
+        display: block
+
+    @include lg
+      display: block
+
+  &__flex-wrap
+    @include aistr
+    margin-top: rem(45)
+
+    @include sm
+      flex-direction: column
+
+  &__col
+
+    &:first-child
+      margin-right: rem(40)
+
+      @include md
+        margin-right: rem(15)
+        width: calc( 80% - 10px )
+
+      @include sm
+        width: 100%
+        margin-right: 0
+
+    &:last-child
+      @include aife
+
+  &__wrap
+    @include fww
+    margin-top: rem(20)
+
+    @include lg
+      margin-top: 0
+
+    @include md
+      justify-content: space-between
+
+  &__item
+    width: 33.33%
+    margin-bottom: rem(40)
+
+    @include md
+      margin-bottom: rem(30)
+      width: calc( 50% - 20px )
+
+    @include sm
+      width: calc( 33.33% - 5px )
+      text-align: center
+      margin-bottom: rem(20)
+
+    &-icon
+      width: rem(75)
+      height: rem(75)
+      @include aic-jcc
+      margin-bottom: rem(12)
+
+      @include sm
+        margin: auto
+        margin-bottom: rem(10)
+
+    &-title
+      @include sm
+        font-size: rem(14)
+
+      @include xs
+        font-size: rem(13)
+        line-height: rem(15)
+
+  &__video
+    max-width: rem(450)
+    width: 100%
+    height: 100%
+    @include aic-jcc
+    position: relative
+    
+    @include sm
+      width: auto
+      height: auto
+      overflow: visible
+
+    video
+      width: 100%
+      height: 100%
+      object-fit: cover
+      border-radius: rem(16)
+
+    .close
+      display: none
+      position: absolute
+      z-index: 3
+      cursor: pointer
+      width: rem(30)
+      height: rem(30)
+      
+      
+      svg
+        width: 100%
+        height: 100%
+
+        path
+          transition: $tr
+          stroke: $wc
+
+      @include sm
+        @include aic-jcc
+        bottom: 100%
+        right: 0
+
+      &:hover
+        path
+          stroke: $accent  
+
+  &__bottom
+    @include aic-jfcsb
+
+    @media (max-width: 375px)
+      flex-direction: column-reverse
+
+  &__mobile-video
+    color: $accent
+    font-size: rem(15)
+    display: none
+
+    @include sm
+      @include aic-jfcfe
+
+    @media (max-width: 375px)
+      margin-bottom: rem(15)
+
+    svg
+      margin-left: rem(10)
+
+.video-js
+  @include sm
+    opacity: 0
+    position: fixed
+    pointer-events: none
+    transition: $tr
+    @include aic-jcc
+    z-index: 2
+    padding: rem(20)
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background-color: rgba($bc, .5)
+    width: 100%
+    height: 100%
+
+  &.play
+    opacity: 1
+    @include aic-jcc
+    pointer-events: inherit

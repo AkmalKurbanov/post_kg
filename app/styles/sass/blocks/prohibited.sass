@@ -1,0 +1,219 @@
+.prohibited-goods
+  @include aistr-jfcsb
+  margin-bottom: rem(20)
+  
+  &__item
+    @include aic
+
+    img 
+      object-fit: contain
+      width: 90%
+      height: 90%
+
+    &-img
+      min-width: rem(105)
+      max-width: rem(105)
+      min-height: rem(105)
+      max-height: rem(105)
+      @include aic-jcc
+      border-radius: rem(16)
+      background: #e2e8f0
+
+    &-name
+      font-size: rem(14)
+      line-height: rem(24)
+      color: #000000b8
+      
+      @include lg
+        font-size: rem(12)
+        line-height: rem(14)
+        
+
+.prohibited-list
+  @include aic-jcc
+  z-index: 2
+
+  @include lg
+    flex-direction: column-reverse
+  
+  &.popup-window-wrap
+    background: rgba($bc,.6)
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 100%
+    transition: $tr
+    pointer-events: none
+    opacity: 0
+    overflow: auto
+    display: block
+    padding: rem(20)
+    
+    @include xs
+      padding: 0
+
+    
+  &.open
+    opacity: 1
+    pointer-events: inherit
+
+    .prohibited-list__window
+      opacity: 1
+      transform: translate(0)
+      
+
+
+  &__window 
+    background: $wc
+    padding: rem(25)
+    position: relative
+    @include sm
+      padding: rem(15)
+
+    @include xs
+      text-align: center  
+      padding: rem(30) 0
+
+    &.popup-window
+      transition: $tr
+      transition-delay: .2s
+      opacity: 0
+      max-width: rem(920)
+      margin: auto
+      transform: translateY(-20px)
+
+      @include xs
+        border-radius: 0
+      
+      .prohibited-list__window-wrap
+        @include xs
+          padding: rem(20) rem(15)  
+
+    &-wrap
+      background: #F6F6F9
+      padding: rem(40)
+      margin-top: rem(20)
+      width: 90%
+
+      @include lg
+        padding: rem(20)
+
+      @include md
+        width: 100%
+
+      @include xs
+        padding: rem(10)
+
+      .prohibited-goods
+        @include fww
+        margin-bottom: 0
+        
+        @include xs
+          flex-direction: column
+
+        &__item
+          width: calc( 50% - 20px )
+          margin-bottom: rem(20)
+          text-align: left
+
+          @include sm
+            width: calc( 50% - 5px )
+
+          @include xs
+            width: 100%  
+
+          &:nth-last-of-type(-n+2)
+            margin-bottom: 0
+
+            @include xs
+              margin-bottom: rem(20)
+          
+          &:last-child
+            margin-bottom: 0
+          
+          &-img
+            min-width: rem(85)
+            max-width: rem(85)
+            min-height: rem(85)
+            max-height: rem(85)
+            border-radius: 100%
+            margin-right: rem(10)
+
+            @include lg
+              min-width: rem(70)
+              max-width: rem(70)
+              min-height: rem(70)
+              max-height: rem(70)
+
+            @include md
+              min-width: rem(60)
+              max-width: rem(60)
+              min-height: rem(60)
+              max-height: rem(60)
+
+
+    &-close
+      position: absolute
+      width: rem(24)
+      height: rem(24)
+      cursor: pointer
+      z-index: 1
+      top: rem(25)
+      right: rem(25)
+      
+      @include xs
+        top: rem(10)
+        right: rem(10)
+
+      svg
+        width: 100%
+        height: 100%  
+
+    .btn
+      margin-top: rem(20)
+      float: right    
+      
+      @include xs
+        float: none
+
+
+  &__desc
+    
+    .title
+      margin-bottom: rem(10)
+      br
+        @include sm
+          display: none
+
+    &-img
+      max-width: rem(120)
+      width: 100%
+      margin-bottom: rem(10)
+
+      @include sm
+        margin: auto
+        margin-bottom: rem(10)
+
+    p 
+      font-size: rem(14)
+      margin-bottom: rem(10)
+      line-height: rem(24)
+      
+      &:last-child
+        margin-bottom: 0   
+
+    .btn
+      @include lg
+        display: none    
+
+.prohibited-btn-hidden
+  display: none
+
+  @include lg
+    display: block      
+
+  @include xs
+    text-align: center  

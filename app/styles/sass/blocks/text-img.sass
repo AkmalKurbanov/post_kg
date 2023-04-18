@@ -1,0 +1,90 @@
+.text-img
+  &__hidden-title
+    display: none
+    margin-bottom: rem(30)
+
+    @include sm
+      display: block
+
+  &__hidden-btn
+    display: none    
+    margin-top: rem(20)
+
+    @include sm
+      @include aic-jcc
+ 
+  &__flex-wrap 
+    @include aic-jfcsb
+
+    @include md
+      align-items: flex-start
+
+    @include xs
+      flex-direction: column  
+
+  &__img-wrap
+    position: relative
+    max-width: rem(500)
+    width: 100%
+    margin-right: rem(30)
+
+    @include md
+      max-width: rem(320)
+      margin-right: rem(15)
+
+    @include xs
+      max-width: 100%
+    svg
+      position: absolute
+      right: 100%
+      bottom: 100%
+      
+      @media (max-width: 1350px)
+        left: 100%
+        right: auto
+        transform: rotateY(180deg)      
+
+      @include md
+        left: auto
+        right: 100%
+        bottom: 100%
+        transform: none
+
+      @include sm
+        width: rem(25)
+
+      @include sm
+        bottom: auto
+        right: auto
+
+
+  &__img
+    @include aic-jcc
+  
+  &__text
+    max-width: rem(575)
+    width: 100%
+    
+    .title
+      @include sm
+        display: none
+
+    ol,ul
+      margin-top: rem(10)
+      margin-bottom: rem(20)
+      margin-left: rem(-20)
+      
+      @include xs
+        margin-top: rem(20)
+        margin-left: 0
+
+
+    li
+      margin-bottom: rem(8)
+      @include md
+        margin-bottom: rem(5)
+        font-size: rem(14)
+
+    .btn
+      @include sm
+        display: none    

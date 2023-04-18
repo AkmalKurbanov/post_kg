@@ -1,11 +1,32 @@
 extends layouts/main
+
+block vars
+  - var description;
+  - var keywords;
+  - var ogtitle;
+  - var ogtype;
+  - var ogurl;
+  - var ogimg;
+
 block title
-  | main
+  | Главная
 block main
   .wrapper
     .content
         include includes/header
 
+        include includes/hero
+        include includes/textImg
+        include includes/advantages
+        include includes/compare
+        include includes/calculator
+        include includes/example
+        include includes/faq
+        include includes/popularShops
+        include includes/seoText
+
+        
+        
         
          
      

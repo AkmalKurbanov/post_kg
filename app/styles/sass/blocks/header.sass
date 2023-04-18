@@ -1,2 +1,102 @@
-// .header
-	
+.header
+  height: rem(60)
+  @include aic
+  background-color: $wc
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  width: 100%
+  transition: $tr
+  z-index: 2
+  @include xs
+  
+  &__logo
+    width: rem(180)
+    @include aic
+    
+    @include sm
+      width: rem(140)
+    
+    @include xs
+      width: rem(120)
+
+    svg
+      width: 100%
+      height: 100%
+  
+  &__flex-wrap
+    justify-content: space-between
+  
+  &__flex-wrap,
+  &__flex-item
+    @include aic
+
+  &__login
+    a
+      color: $textcolor
+      
+      &:hover
+        color: $accent
+
+    .btn
+      min-height: auto
+      margin-left: rem(10)
+      color: $wc
+      position: relative
+
+      &:hover
+        color: $wc
+      
+      a
+        padding: rem(2) rem(8)
+        color: $wc
+
+      .header__personal-area-dropdown
+        opacity: 0
+        pointer-events: none
+        transition: $tr
+        transform: translateY(-20px)
+        position: absolute
+        background: $wc
+        box-shadow: 0 4px 12px rgba(0,0,0,.12)
+        border-radius: rem(16)
+        padding: rem(8)
+        top: calc( 100% + 1px )
+        right: 0
+
+        a
+          color: $textcolor
+          transition: $tr 
+          display: block
+          white-space: nowrap
+          text-align: left
+
+          &:hover
+            color: $accent
+
+      &:hover
+        .header__personal-area-dropdown
+          opacity: 1
+          pointer-events: inherit
+          transform: translate(0)
+
+
+  &__nav
+    margin-left: rem(50)
+    ul
+      padding: 0
+      @include aic
+      li
+        margin-right: rem(15)
+        &:last-child
+          margin-right: 0
+        a    
+          color: $textcolor
+          transition: $tr
+          padding: rem(2) rem(8)
+          border-radius: $br
+          display: inline-flex
+          &:hover
+            background-color: $accent
+            color: $wc

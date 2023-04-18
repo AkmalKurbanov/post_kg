@@ -48,10 +48,10 @@
   },
   "dependencies": {
     "intl-tel-input": "^17.0.19",
-    "jquery": "^3.6.2",
+    "jquery": "^3.6.4",
     "jquery-lazy": "^1.7.11",
     "normalize.css": "^8.0.1",
     "save-dev": "^0.0.1-security",
-    "swiper": "^8.4.5"
+    "swiper": "^8.4.7"
   }
 }

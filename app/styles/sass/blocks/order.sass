@@ -1,0 +1,182 @@
+.order
+  h2
+    font-weight: normal
+    margin: rem(15) 0 rem(10)
+
+  &__form
+    margin-top: rem(20)
+    margin-bottom: rem(50)
+
+  .container
+    max-width: rem(880)
+
+  &__input-wrap
+    @include aife-jfcsb
+    
+    @include xs
+      flex-direction: column
+    
+    .input-wrap
+      padding: 0 rem(5)
+
+      @include xs
+        max-width: 100%
+        padding: 0
+        margin-bottom: rem(20)
+
+      &:first-child
+        padding-left: 0
+      
+      &:last-child
+        padding-right: 0  
+      
+
+    &--copied
+      margin-bottom: rem(20)    
+      flex-direction: column
+      align-items: flex-start
+      
+      @include xs
+        padding-bottom: rem(20)
+        border-bottom: rem(1) solid #ccc 
+
+      .copied-wrap
+        @include aife-jfcsb
+        width: 100%
+        margin-bottom: rem(20)
+        position: relative
+
+        @include sm
+          flex-wrap: wrap
+          margin-bottom: 0
+
+      &:last-child
+        border: none
+        padding-bottom: 0
+        
+      .sm
+        max-width: rem(130)
+
+      .input-wrap
+        @include sm
+          max-width: calc( 50% - 5px )
+          padding: 0
+          margin-bottom: rem(20)
+
+        @include xs
+          max-width: 100%
+
+      .close
+        @include sm
+          position: absolute
+          top: 0
+          right: 0
+
+
+  &__track-number
+    background: $accent
+    @include jfcsb
+    margin: rem(15) 0
+
+    @include xs
+      flex-direction: column
+
+    .dropdown-info
+      color: $wc
+      
+      label
+        color: $wc
+    
+    .input
+      border: rem(1) solid $bc 
+
+    &-col
+      width: calc( 50% - 5px )
+
+      &:last-child
+        @include aic-jfcsb
+        
+        @include xs
+          margin-top: rem(20)
+
+      @include xs
+        width: 100%
+
+    &-info
+      font-size: rem(12)  
+      line-height: rem(13)
+      color: $wc
+
+    &-more
+      max-width: rem(45)
+      min-width: rem(45)
+      min-height: rem(45)
+      max-height: rem(45)
+      border-radius: rem(12)
+      background-color: $wc
+      @include aic-jcc
+      position: relative
+      cursor: pointer
+      margin-left: rem(20)
+
+
+      .angle  
+         transform: rotate(-45deg)
+         width: rem(10)
+         height: rem(10)
+      
+      &.open
+        .angle  
+          transform: translateY(20%) rotate(135deg)
+
+    &-hidden
+      display: none
+      padding: rem(20) 0
+
+      p
+        margin-bottom: rem(10)
+        
+        @include sm
+          font-size: rem(15)
+          margin-bottom: rem(7)
+        
+        @include xs
+          font-size: rem(14)
+
+        &:last-child
+          margin-bottom: 0
+      *
+        color: $wc
+
+  &__add-product
+    @include aic
+    cursor: pointer
+    margin-top: rem(20)
+
+    &:hover
+      p
+        color: $accent
+    span
+      position: relative
+      width: rem(15)
+      height: rem(15)
+      @include aic-jcc
+      margin-right: rem(10)
+
+      &:before,
+      &:after
+        position: absolute
+        content: ''
+        width: rem(13)
+        height: rem(2)
+        background-color: #ec1f2b
+
+      &:after
+        transform: rotate(90deg)  
+
+    p
+      transition: $tr    
+
+  &__btn-wrap
+    text-align: center
+    margin-top: rem(40)              

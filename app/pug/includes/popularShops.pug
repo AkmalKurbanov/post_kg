@@ -1,0 +1,25 @@
+.popular.section
+  .container
+    h2.title Самые популярные магазины
+    .subtitle С Nova Poshta Shopping вы можете заказывать товары из самых крупных <br> интернет-магазинов мира. Главное – найти то, что хочется.
+
+  .products-slider.products-slider--popular
+    .container
+      .swiper.popular-js
+        .swiper-wrapper
+
+          each brand,index in ['Apple','Amazon','Calvin Klein',"6pm","Victoria's Secret"]
+            .swiper-slide
+              a(href="#").products-slider__item
+                .products-slider__item-img.radial-block 
+                  img(src="images/dist/brand"+(index+1)+".svg", alt="")
+                .products-slider__item-info 
+                  .products-slider__item-name=brand 
+                   
+        .button-prev.nav-btn
+          svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(fill-rule='evenodd' clip-rule='evenodd' d='M11.1518 18.6533L11.5105 19.0016L12.2071 18.284L11.8483 17.9358L5.73306 11.9998H19.5H20V10.9998H19.5H5.73295L11.8483 5.06385L12.2071 4.7156L11.5106 3.99805L11.1518 4.3463L4.15178 11.141C4.05477 11.2351 4.00003 11.3646 4.00003 11.4997C4.00003 11.6349 4.05477 11.7644 4.15177 11.8585L11.1518 18.6533Z')
+      
+        .button-next.nav-btn
+          svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(fill-rule='evenodd' clip-rule='evenodd' d='M12.8483 5.34667L12.4895 4.99842L11.793 5.71596L12.1517 6.06422L18.267 12.0002L4.5 12.0002L4 12.0002L4 13.0002L4.5 13.0002L18.2671 13.0002L12.1517 18.9361L11.793 19.2844L12.4895 20.002L12.8483 19.6537L19.8483 12.859C19.9453 12.7649 20 12.6354 20 12.5003C20 12.3651 19.9453 12.2356 19.8483 12.1415L12.8483 5.34667Z')

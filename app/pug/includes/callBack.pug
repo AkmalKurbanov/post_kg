@@ -1,0 +1,40 @@
+.call-back 
+  .call-back__window.radial-block
+    h2.title.title--tac Отправить запрос
+    .subtitle.subtitle--tac Если у вас возникли вопросы, связанные с доставкой или предложения по работе сервиса, <br> пожалуйста, заполните форму
+    form(action="")  
+      .call-back__window-wrap
+        
+        .call-back__window-close.close
+          svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none')
+            path(d='M21 2.64111L3.28251 20.3586' stroke='black')
+            path(d='M21 20.3589L3.28251 2.6414' stroke='black')
+
+        .input-wrap.input-wrap--half
+          .dropdown-info
+            label(for='name-shop') Название интернет-магазина
+          .input.input--bordered
+            input#name-shop(type='text')
+        .input-wrap.input-wrap--half
+          .dropdown-info
+            label(for='email') Email
+          .input.input--bordered
+            input#email(type='text' name="email")
+        .input-wrap.input-wrap--half
+          .dropdown-info
+            label(for='order-number') Номер заказа (не обязательно)
+          .input.input--bordered
+            input#order-number(type='text' name="Номер заказа")
+        .input-wrap.input-wrap--half
+          .dropdown-info
+            label(for='message-theme') Тема сообщения
+          .input.input--bordered
+            input#message-theme(type='text' name="Тема сообщения")
+        .input-wrap
+          .dropdown-info
+            label(for='message') Текст сообщения
+          .input.input--bordered.input--textarea
+            textarea#message(name="Cообщения") 
+      
+      .btn-wrap.btn-wrap--tac
+        button(type="submit").btn Отправить

@@ -1,0 +1,139 @@
+extends layouts/main
+
+block vars
+  - var description;
+  - var keywords;
+  - var ogtitle;
+  - var ogtype;
+  - var ogurl;
+  - var ogimg;
+
+block title
+  | Личный кабинет
+
+block main
+  .wrapper
+    .content
+        include includes/header
+        
+        .personal-area.section
+          .container
+            h2.title.title--h1.title--tac Личный кабинет
+            
+            .personal-area__links
+              a.btn(href="personal-area.html")
+                svg.btn__plus(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                  path(fill-rule='evenodd' clip-rule='evenodd' d='M11.5 12.5V20H12.5V12.5H20V11.5H12.5V4H11.5V11.5H4V12.5H11.5Z' fill='white')
+                | Добавить отправку 
+              a.btn.btn--empty(href="personal-address.html") Мои адреса
+
+            .personal-area__flex-wrap 
+              
+              .calculator__calculator
+                form(action="")
+                  .calculator__input-wrap
+                    .input-wrap.input-wrap--half 
+                      .dropdown-info   
+                        | Вес отправления
+                        span ?
+                          .dropdown-info__hidden-text  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
+                      .input.input--select 
+                        input(type="number" step="0.5" min="0.5" max="200" value="0.5")
+                        .input__select.select-js
+                          .input__select-hidden
+                            input(type="hidden" data-val="0.5")
+                          .input__select-selected 
+                            span kg
+                          //-   i.angle
+                          //- .input__select-dropdown 
+                          //-   .input__select-option(data-val="kg") kg
+                          //-   .input__select-option(data-val="lb") lb
+                          //-   .input__select-option(data-val="oz") oz
+
+                    .input-wrap.input-wrap--half 
+                      .dropdown-info   
+                        | Сумма заказа
+                        span ?
+                          .dropdown-info__hidden-text  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
+                      .input.input--select 
+                        input(type="number"  min="10" max="10000" value="10")
+                        .input__select.select-js
+                          .input__select-hidden
+                            input(type="hidden" data-val="10")
+                          .input__select-selected 
+                            span $
+                          //-   i.angle 
+                          //- .input__select-dropdown 
+                          //-   .input__select-option(data-val="$") $
+                          //-   .input__select-option(data-val="£") £
+                          //-   .input__select-option(data-val="€") €
+                  
+                  .calculator__calculator-total
+                    div 
+                      .dropdown-info   
+                        | Международная экспресс-доставка
+                        span ?
+                          .dropdown-info__hidden-text  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
+                    div 7.00 $
+
+                  .calculator__calculator-total
+                    div 
+                      .dropdown-info К оплате
+                        
+                    div 7.00 $
+                    
+                  .calculator__calculator-total
+                    div 
+                      .dropdown-info По курсу НБУ на сегодня
+                    div 256 ₴
+
+              .personal-area__block.radial-block.cabinet-orders
+                h2.title Мои отправления
+                
+                .tab
+                  ul.tabs
+                    li
+                      a(href='#') В работе
+                    li
+                      a(href='#') Получены
+                    li
+                      a(href='#') Архивные
+                  .tab_content
+                    .tabs_item 
+                      p 
+                        b 1.Вы еще не создали ни одного отправления
+                      p Сюда будут попадать отправления, которые вы уже создали 
+                    
+                    .tabs_item 
+                      p 
+                        b 2.Вы еще не создали ни одного отправления
+                      p Сюда будут попадать отправления, которые вы уже создали 
+                    
+                    .tabs_item 
+                      p 
+                        b 3.Вы еще не создали ни одного отправления
+                      p Сюда будут попадать отправления, которые вы уже создали 
+                 
+              .personal-area__block.radial-block.prohibited-block
+                h2.title Запрещенные товары
+                .prohibited-goods-wrap
+                  .prohibited-goods
+                    .swiper.prohibited-js
+                      .swiper-wrapper
+
+                        each prohibited in [1,2,3,4]
+                          .swiper-slide
+                            .prohibited-goods__item
+                              .prohibited-goods__item-img
+                                img(src="images/dist/prohibited"+prohibited+".webp", alt="")
+
+
+                a.btn.btn--empty.prohibited-goods-js(href="#") Полный список 
+         
+
+
+    include includes/prohibitedPopup
+    include includes/footer
+
+
+  include includes/scripts 

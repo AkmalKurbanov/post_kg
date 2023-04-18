@@ -1,0 +1,83 @@
+.calculator.section
+  .container
+    .calculator__flex-wrap 
+      .calculator__col 
+        .calculator__calculator
+          form(action="")
+            .calculator__input-wrap
+              .input-wrap.input-wrap--half 
+                .dropdown-info   
+                  | Вес отправления
+                  span ?
+                    .dropdown-info__hidden-text  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
+                .input.input--select 
+                  input(type="number" step="0.5" min="0.5" max="200" value="0.5")
+                  .input__select.select-js
+                    .input__select-hidden
+                      input(type="hidden" data-val="0.5")
+                    .input__select-selected 
+                      span kg
+                    //-   i.angle
+                    //- .input__select-dropdown 
+                    //-   .input__select-option(data-val="kg") kg
+                    //-   .input__select-option(data-val="lb") lb
+                    //-   .input__select-option(data-val="oz") oz
+
+              .input-wrap.input-wrap--half 
+                .dropdown-info   
+                  | Сумма заказа
+                  span ?
+                    .dropdown-info__hidden-text  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
+                .input.input--select 
+                  input(type="number"  min="10" max="10000" value="10")
+                  .input__select.select-js
+                    .input__select-hidden
+                      input(type="hidden" data-val="10")
+                    .input__select-selected 
+                      span $
+                    //-   i.angle
+                    //- .input__select-dropdown 
+                    //-   .input__select-option(data-val="$") $
+                    //-   .input__select-option(data-val="£") £
+                    //-   .input__select-option(data-val="€") €
+            
+            .calculator__calculator-total
+              div 
+                .dropdown-info   
+                  | Международная экспресс-доставка
+                  span ?
+                    .dropdown-info__hidden-text  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
+              div 7.00 $
+
+            .calculator__calculator-total
+              div 
+                .dropdown-info К оплате
+                  
+              div 7.00 $
+              
+            .calculator__calculator-total
+              div 
+                .dropdown-info По курсу НБУ на сегодня
+              div 256 $
+            
+            .btn-wrap.btn-wrap--tac
+              button.btn Рассчитать        
+
+      .calculator__col
+        svg.arrow(width='129' height='83' viewBox='0 0 129 83' fill='none' xmlns='http://www.w3.org/2000/svg')
+          g(clip-path='url(#clip0_66_160)')
+            path(fill-rule='evenodd' clip-rule='evenodd' d='M68.62 69.7637C54.0623 77.6522 37.4122 83.4465 20.9043 82.3113C14.8978 81.8988 9.33781 80.1669 3.62963 78.4451C3.22919 78.3249 3.00096 77.9005 3.12109 77.498C3.24322 77.0956 3.66768 76.8674 4.07012 76.9895C9.66818 78.6773 15.1181 80.3892 21.0085 80.7936C37.2821 81.9128 53.6858 76.1506 68.0234 68.3581L67.9213 68.1279C66.8061 65.6312 67.4968 61.9872 69.3188 58.1631C71.9296 52.6812 76.7909 46.7908 81.1656 43.5373C83.1317 42.0757 85.0158 41.1467 86.5695 40.9525C87.7808 40.8003 88.8199 41.0726 89.6228 41.7974C91.3326 43.3431 91.2726 45.9799 89.9171 49.0372C87.084 55.4321 78.763 63.8533 74.2501 66.5542C72.8406 67.3971 71.407 68.226 69.9515 69.0329C70.1357 69.4773 70.3179 69.9118 70.5141 70.3263C71.0767 71.5056 71.7674 72.5367 73.0989 73.2434C75.1751 74.3426 77.6638 74.5328 80.2106 74.2485C84.1849 73.802 88.2993 72.1863 91.3286 70.7988C108.199 63.0704 116.554 49.6659 121.035 36.2093C125.558 22.6186 126.15 8.9638 127.49 0.909103C127.558 0.494603 127.95 0.216301 128.365 0.284401C128.779 0.352501 129.059 0.744901 128.989 1.1594C127.642 9.2661 127.031 23.009 122.476 36.6899C117.879 50.5048 109.28 64.2477 91.9633 72.1823C88.8079 73.6279 84.5193 75.2957 80.3808 75.7602C77.5157 76.0805 74.7226 75.8242 72.3861 74.5869C70.2898 73.4757 69.4569 71.7418 68.62 69.7637ZM69.3608 67.6213L69.3088 67.5072C68.3337 65.3248 69.0986 62.1614 70.6923 58.8178C73.201 53.5501 77.868 47.886 82.0746 44.7586C83.5162 43.6854 84.8957 42.9146 86.109 42.5902C87.1101 42.324 87.979 42.362 88.6017 42.9266C89.1923 43.4572 89.4266 44.188 89.4166 45.0389C89.4065 46.038 89.0742 47.1852 88.5276 48.4206C85.8046 54.5652 77.806 62.654 73.4693 65.2488C72.1218 66.0537 70.7523 66.8465 69.3608 67.6213Z' fill='#005891')
+            path(fill-rule='evenodd' clip-rule='evenodd' d='M1.69949 76.0912C1.76556 76.4175 1.98781 76.828 2.23207 77.2665C2.8127 78.3116 3.63959 79.4248 4.00799 79.9654C4.24425 80.3138 4.15215 80.7863 3.80577 81.0225C3.4574 81.2588 2.98488 81.1687 2.74862 80.8203C2.29813 80.1576 1.19895 78.672 0.608313 77.4407C0.29197 76.78 0.127798 76.1693 0.163837 75.7308C0.223902 74.984 0.814537 74.5175 1.98581 74.5455C3.37131 74.5796 5.9441 75.2743 8.09844 74.4394C8.48886 74.2872 8.93132 74.4834 9.08149 74.8739C9.23365 75.2663 9.03946 75.7068 8.64703 75.8589C6.5928 76.6538 4.1982 76.2714 2.58646 76.1112C2.28013 76.0812 1.91572 76.0852 1.69949 76.0912Z' fill='#005891')
+          defs
+            clippath#clip0_66_160
+              rect(width='129' height='83' fill='white' transform='matrix(1 0 0 -1 0 83)')
+
+        .calculator__text 
+          h2.title Рассчитайте стоимость доставки
+          p Узнайте ориентировочную стоимость доставки, указав основные данные о вашем отправлении. Обратите внимание, что при суммарной стоимости товаров свыше 150 евро, вы должны оплатить пошлину в размере 10% от суммы + НДС (20% от суммы товаров вместе с пошлиной). Дополнительно оплачивается 3% за таможенно-брокерские услуги ЧП Глобал.
+          p Обратите внимание! Пошлина и НДС отменены на генераторы, зарядные станции и павербанки. 
+            a(href="#") Подробнее 
+ 
+
+        
+

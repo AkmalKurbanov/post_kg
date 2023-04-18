@@ -1,0 +1,56 @@
+extends layouts/main
+
+block vars
+  - var description;
+  - var keywords;
+  - var ogtitle;
+  - var ogtype;
+  - var ogurl;
+  - var ogimg;
+
+block title
+  | Профиль
+
+block main
+  .wrapper
+    .content
+        include includes/header
+        .profile.section 
+          .container 
+            h2.title.title--h1 Личные данные
+            form(action="") 
+              .profile__form
+
+                .input-wrap
+                  .dropdown-info
+                    label(for="last-name") Фамилия
+                  .input.input--bordered
+                    input(type='text' name="Фамилия" id="last-name" value="Иванов")
+
+                .input-wrap
+                  .dropdown-info
+                    label(for="name") Имя
+                  .input.input--bordered
+                    input(type='text' name="Имя" id="name" value="Иван")      
+                
+                .input-wrap
+                  .dropdown-info
+                    label(for="phone") Телефон
+                  .input.input--bordered
+                    input(type='text' name="Телефон" id="phone" value="+996 (707) 999 999")      
+                
+                .input-wrap
+                  .dropdown-info
+                    label(for="email") Email
+                  .input.input--bordered
+                    input(type='text' name="email" id="email" value="email@gmail.com")      
+
+              .btn-wrap
+                a.btn(href="#") Сохранить 
+        
+
+    include includes/prohibitedPopup
+    include includes/footer
+
+
+  include includes/scripts 
