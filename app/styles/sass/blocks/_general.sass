@@ -108,7 +108,6 @@ a
     line-height: rem(30)
     text-align: center
 
-
   &--h1
     font-size: rem(52)
     line-height: rem(70)
@@ -118,7 +117,6 @@ a
       font-size: rem(40)
       line-height: rem(40)
       margin-bottom: rem(10)
-
 
     @include xs
       font-size: rem(25)
@@ -151,17 +149,17 @@ a
       right: 0
       bottom: 0
       width: 100%
-      
+
       @include md
         bottom: rem(-7)
-      
+
       svg
         width: 100%
 
 .subtitle
   @include sm
     text-align: center
-    
+
   &--tac
     text-align: center
 
@@ -180,7 +178,7 @@ a
 
   @include lg
     padding: rem(50) 0
-  
+
   @include md
     padding: rem(40) 0
 
@@ -215,13 +213,22 @@ a
 
   &--half
     max-width: calc( 50% - 15px )
-    
+
     @include md
       max-width: calc( 50% - 5px )
 
   label
     font-size: rem(14)
-  
+
+    @include aic
+
+    .require
+      @include aic
+      margin-left: rem(5)
+      color: red
+      font-weight: bold
+
+
   .input
     background-color: $wc
     border-radius: rem(12)
@@ -238,11 +245,11 @@ a
 
     &--select
       @include aistr
-
+      cursor: pointer
+      
       input
         border-radius: rem(12) 0 0 rem(12)
 
-    
     &--half
       max-width: calc( 50% - 15px )
 
@@ -260,12 +267,12 @@ a
         width: rem(25)
         height: rem(25)
         cursor: pointer
-        
+
         &--off
           display: none
-        
+
         svg
-          width: 100% 
+          width: 100%
           height: 100%
 
     &--textarea
@@ -281,7 +288,6 @@ a
         resize: none
         border-radius: rem(12)
         padding: rem(10)
-
 
     &--counter
       @include aic-jfcsb
@@ -304,46 +310,69 @@ a
           content: ''
           width: rem(12)
           height: rem(2)
-          background-color: $accent 
-        
+          background-color: $accent
+
         &.disabled
           pointer-events: none
-          opacity: .5 
+          opacity: .5
 
       .counter
         text-align: center
 
       .count-plus
-         &:after
+        &:after
           transform: rotate(90deg)
 
-      input
-        &::-webkit-outer-spin-button, 
-        &::-webkit-inner-spin-button
-          -webkit-appearance: none     
-          // background: #fff url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAfCAYAAAD9cg1AAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACeSURBVHgB7ZbLDYAgEAWfndqJdKAdqwdEgoD7eVyMk+yFw0xCwgZAxxxnCMs5e5wFZHI5PVKT0yKlPMShRGryC3ekJ3dHJHJzRCNXRyxyccQjF0W88lYksRHkZWTDJ5hQ3NVPixWk9Yv7Ta35IWX94vlgE4EQed0Gnoh41VgiYrklopZrIma5JOKW9yI0eStClfciAWTCSPnFDOXv+gD1I6YdTGwAvAAAAABJRU5ErkJggg==") no-repeat 50%
-          // background-size: contain
-          // bottom: 0
-          // opacity: .5
-          // position: absolute
-          // right: 0
-          // top: 0
-          // width: .75rem
+      // input
+      //   &::-webkit-outer-spin-button, 
+      //   &::-webkit-inner-spin-button
+      //     -webkit-appearance: none     
+      //     background: #fff url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAfCAYAAAD9cg1AAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACeSURBVHgB7ZbLDYAgEAWfndqJdKAdqwdEgoD7eVyMk+yFw0xCwgZAxxxnCMs5e5wFZHI5PVKT0yKlPMShRGryC3ekJ3dHJHJzRCNXRyxyccQjF0W88lYksRHkZWTDJ5hQ3NVPixWk9Yv7Ta35IWX94vlgE4EQed0Gnoh41VgiYrklopZrIma5JOKW9yI0eStClfciAWTCSPnFDOXv+gD1I6YdTGwAvAAAAABJRU5ErkJggg==") no-repeat 50%
+      //     background-size: contain
+      //     bottom: 0
+      //     opacity: .5
+      //     position: absolute
+      //     right: 0
+      //     top: 0
+      //     width: .75rem
+      //     height: 10px
 
+    &--country-select
       
+      .input__select
+        width: 100%
+        background: none
+
+      .input__select-selected
+        padding-right: 0
+        padding-left: rem(10)
+        @include aic
+        justify-content: flex-start
+
+        @include xs
+          font-size: rem(13)
+      
+      .input__select-selected-flag
+        @include aic-jcc
+        margin-right: rem(5)
+        
+
+      .input__select-dropdown
+        width: 100%
 
     &__select
       position: relative
-      background-color: $wc
+      background: $wc
       height: 100%
       border-radius: 0 rem(12) rem(12) 0
-      cursor: pointer
+      // cursor: pointer
 
       &-hidden
         display: none
 
       &-selected
-        padding: 0 rem(30) 0 rem(20)
+        // padding: 0 rem(30) 0 rem(20)
+        padding-right: rem(10)
         height: 100%
         @include aic-jcc
 
@@ -363,14 +392,33 @@ a
         top: rem(20)
         box-shadow: 0px 0px 15px 4px rgba(34, 60, 80, 0.18)
         z-index: 1
-        
+
       &-option
         padding: rem(12) rem(30) rem(12) rem(20)
         transition: $tr
+        cursor: pointer
 
+        @include xs
+          font-size: rem(13)
+        
         &:hover
           background-color: $accent
           color: $wc
+
+        &--country
+          @include aic
+          padding: rem(10)
+
+          &.soon
+            pointer-events: none
+            opacity: .5
+            font-size: rem(13)  
+
+      &-option-flag
+        max-width: rem(24)
+        min-width: rem(24)
+        @include aic-jcc
+        margin-right: rem(5)
 
       &.open
         .angle
@@ -405,8 +453,7 @@ a
   transition: $tr
   cursor: pointer
   position: absolute
-  
- 
+
 // angle end
 
 // drop down info
@@ -415,6 +462,12 @@ a
   font-size: rem(14)
   margin-bottom: rem(5)
   position: relative
+
+  .require
+    @include aic
+    margin-left: rem(5)
+    color: red
+    font-weight: bold
 
   span
     width: rem(19)
@@ -455,10 +508,7 @@ a
       left: auto
       right: 0
 
- 
-
 // drop down info end
-
 
 // back btn  
 .back-btn
@@ -466,20 +516,17 @@ a
   transition: $tr
   @include aic
   margin-bottom: rem(20)
-  
+
   svg
     margin-right: rem(10)
- 
+
   &:hover
-    color: $accent  
+    color: $accent
 // back btn end  
-
-
-
 
 // social form   
 .form-social
-  @include aic-jfcsb
+  @include aic-jcc
   max-width: rem(650)
   width: 100%
   margin: rem(30) auto
@@ -490,20 +537,13 @@ a
 
   a
     max-width: rem(315)
-    width: 100%      
+    width: 100%
     height: rem(45)
     border-radius: rem(16)
-    @include aic-jcc  
+    @include aic-jcc
     position: relative
-    padding: rem(10) 
-    margin: 0 rem(5)
+    padding: rem(10)
 
-    &:first-child
-      background: #3c5a96
-      color: $wc
-      @include xs
-        margin-bottom: rem(15)
-    
     &:last-child
       background: rgba(211,200,200,.5)
       color: $textcolor
@@ -512,5 +552,5 @@ a
       position: absolute
       top: 50%
       left: rem(10)
-      transform: translateY(-50%)  
+      transform: translateY(-50%)
 // social form end  

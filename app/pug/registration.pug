@@ -37,6 +37,15 @@ block main
                         input(type='text' name="Имя" id="name")
 
                     .input-wrap
+                      .dropdown-info   
+                        label(for="inn") ИНН
+                        span ?
+                          .dropdown-info__hidden-text  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
+                      
+                      .input.input--bordered
+                        input(type='text' name="ИНН" id="inn")
+
+                    .input-wrap
                       .dropdown-info
                         label(for="phone") Телефон
                       .input.input--bordered
@@ -76,11 +85,11 @@ block main
                 p.or Или войдите через соцсети
                 .form-social 
               
-                  a(href="#") 
-                    svg(width='11' height='20' viewBox='0 0 11 20' fill='none' xmlns='http://www.w3.org/2000/svg')
-                      path(fill-rule='evenodd' clip-rule='evenodd' d='M10.7586 0.619932V3.63983H8.88512C8.20094 3.63983 7.73953 3.77709 7.50087 4.05163C7.2622 4.32617 7.14287 4.73797 7.14287 5.28704V7.44901H10.6393L10.1739 10.835H7.14287V19.5171H3.49129V10.835H0.448303V7.44901H3.49129V4.95531C3.49129 3.53687 3.90497 2.43683 4.73235 1.65516C5.55972 0.873494 6.66155 0.482666 8.03786 0.482666C9.20733 0.482666 10.1142 0.528421 10.7586 0.619932Z' fill='white')
+                  //- a(href="#") 
+                  //-   svg(width='11' height='20' viewBox='0 0 11 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                  //-     path(fill-rule='evenodd' clip-rule='evenodd' d='M10.7586 0.619932V3.63983H8.88512C8.20094 3.63983 7.73953 3.77709 7.50087 4.05163C7.2622 4.32617 7.14287 4.73797 7.14287 5.28704V7.44901H10.6393L10.1739 10.835H7.14287V19.5171H3.49129V10.835H0.448303V7.44901H3.49129V4.95531C3.49129 3.53687 3.90497 2.43683 4.73235 1.65516C5.55972 0.873494 6.66155 0.482666 8.03786 0.482666C9.20733 0.482666 10.1142 0.528421 10.7586 0.619932Z' fill='white')
                     
-                    | Войти через Facebook
+                  //-   | Войти через Facebook
                   
                   a(href="#")
                     svg(width='18' height='19' viewBox='0 0 18 19' fill='none' xmlns='http://www.w3.org/2000/svg')

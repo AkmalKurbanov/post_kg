@@ -7,6 +7,9 @@ $('.input__select-option').on('click', function () {
   $('.select-js').removeClass('open')
   let optionVal = $(this).attr('data-val');
   $(this).parent().parent().find('.input__select-selected span').text(optionVal);
+  let flagCountry = $(this).find('img').attr('src');
+  $(this).parent().parent().find('.input__select-selected-flag img').attr('src', flagCountry);
+  $(this).parent().parent().find('.input__select-hidden input').attr('data-val', optionVal);
 });
 
 jQuery(function ($) {

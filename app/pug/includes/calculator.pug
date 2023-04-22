@@ -3,65 +3,77 @@
     .calculator__flex-wrap 
       .calculator__col 
         .calculator__calculator
-          form(action="")
-            .calculator__input-wrap
-              .input-wrap.input-wrap--half 
-                .dropdown-info   
-                  | Вес отправления
-                  span ?
-                    .dropdown-info__hidden-text  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
-                .input.input--select 
-                  input(type="number" step="0.5" min="0.5" max="200" value="0.5")
-                  .input__select.select-js
-                    .input__select-hidden
-                      input(type="hidden" data-val="0.5")
-                    .input__select-selected 
-                      span kg
-                    //-   i.angle
-                    //- .input__select-dropdown 
-                    //-   .input__select-option(data-val="kg") kg
-                    //-   .input__select-option(data-val="lb") lb
-                    //-   .input__select-option(data-val="oz") oz
+          
+          .calculator__input-wrap
+            .input-wrap.input-wrap--half
+              .dropdown-info Выберите страну                
+              .input.input--select.input--country-select
+                .input__select.select-js
+                  .input__select-selected
+                    .input__select-selected-price(data-selectedprice="12" data-exchangeRatesKg="87.52") 
+                    .input__select-selected-flag 
+                      img(src="images/dist/us.svg", alt="") 
+                    span.output США
+                    i.angle
+                  .input__select-dropdown 
+                    
+                    .input__select-option.input__select-option--country(data-val="США" data-price="12")
+                      .input__select-option-flag
+                        img(src="images/dist/us.svg", alt="")
+                      | США
+                    
+                    .input__select-option.input__select-option--country.soon(data-val="Германия" data-price="10")
+                      .input__select-option-flag
+                        img(src="images/dist/de.svg", alt="")
+                      | Германия (Скоро)
+                    
+                    .input__select-option.input__select-option--country.soon(data-val="Турция" data-price="5")
+                      .input__select-option-flag
+                        img(src="images/dist/tr.svg", alt="")
+                      | Турция (Скоро)
 
-              .input-wrap.input-wrap--half 
-                .dropdown-info   
-                  | Сумма заказа
-                  span ?
-                    .dropdown-info__hidden-text  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
-                .input.input--select 
-                  input(type="number"  min="10" max="10000" value="10")
-                  .input__select.select-js
-                    .input__select-hidden
-                      input(type="hidden" data-val="10")
-                    .input__select-selected 
-                      span $
-                    //-   i.angle
-                    //- .input__select-dropdown 
-                    //-   .input__select-option(data-val="$") $
-                    //-   .input__select-option(data-val="£") £
-                    //-   .input__select-option(data-val="€") €
-            
-            .calculator__calculator-total
-              div 
-                .dropdown-info   
-                  | Международная экспресс-доставка
-                  span ?
-                    .dropdown-info__hidden-text  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
-              div 7.00 $
+            .input-wrap.input-wrap--half 
+              .dropdown-info   
+                | Вес отправления
+                span ?
+                  .dropdown-info__hidden-text  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
+              .input.input--select 
+                input(type="number" step="0.5" min="0.5" max="200" value="0.5" onkeydown="if (event.keyCode == 69 || event.keyCode == 189) return false")#weight
+                .input__select
+                  .input__select-selected 
+                    span.output kg
+                  //-   i.angle
+                  //- .input__select-dropdown 
+                  //-   .input__select-option(data-val="kg") kg
+                  //-   .input__select-option(data-val="lb") lb
+                  //-   .input__select-option(data-val="oz") oz
 
-            .calculator__calculator-total
-              div 
-                .dropdown-info К оплате
-                  
-              div 7.00 $
-              
-            .calculator__calculator-total
-              div 
-                .dropdown-info По курсу НБУ на сегодня
-              div 256 $
             
-            .btn-wrap.btn-wrap--tac
-              button.btn Рассчитать        
+          .calculator__calculator-total
+            div 
+              .dropdown-info   
+                | Международная экспресс-доставка
+                span ?
+                  .dropdown-info__hidden-text  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
+            .calculator__total-delivery.calculator__total-wrap
+              .calculator__total-sum
+              span $
+
+          .calculator__calculator-total
+            div 
+              .dropdown-info К оплате
+                
+            .calculator__total-to-pay.calculator__total-wrap
+              .calculator__total-sum
+              span $
+            
+          .calculator__calculator-total
+            div 
+              .dropdown-info По курсу НБКР на сегодня
+            .calculator__total-at-rate.calculator__total-wrap
+              .calculator__total-sum.convert-kg
+              span c
+               
 
       .calculator__col
         svg.arrow(width='129' height='83' viewBox='0 0 129 83' fill='none' xmlns='http://www.w3.org/2000/svg')

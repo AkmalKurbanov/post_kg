@@ -17,16 +17,25 @@
 			font-size: rem(13)
 
 	&__flex-wrap
-		@include aic-jfcsb		
+		@include aic-jfcsb	
+
+		@include xs
+			flex-direction: column-reverse
+			justify-content: center
 
 	ul
 		text-align: right
+
+		@include xs
+			text-align: center
+			margin-bottom: rem(15) 
+
 		li
 			display: inline-block
 			margin-left: rem(10)
 			
 			&:first-child
-				margin-right: 0
+				margin-left: 0
 
 			a
 				transition: $tr

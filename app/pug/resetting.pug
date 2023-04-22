@@ -1,0 +1,41 @@
+extends layouts/main
+
+block vars
+  - var description;
+  - var keywords;
+  - var ogtitle;
+  - var ogtype;
+  - var ogurl;
+  - var ogimg;
+
+block title
+  | Восстановить пароль
+block main
+  .wrapper
+    .content
+        include includes/header-close
+        
+        .log-in.section
+          .container 
+            h2.titlt.title--h1.title--tac Восстановить пароль
+            
+            
+            .log-in__form
+              form(action="")
+                .input-wrap
+                  .dropdown-info
+                    label(for="email") Email
+                  .input.input--bordered
+                    input(type='text' name="email" id="email")  
+                button(type="submit").btn Отправить
+                
+          
+          
+        
+         
+     
+
+    include includes/footer
+
+
+  include includes/scripts 

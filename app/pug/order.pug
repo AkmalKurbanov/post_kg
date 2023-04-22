@@ -14,7 +14,9 @@ block title
 block main
   .wrapper
     .content
-        include includes/header
+    
+        include includes/callBack
+        include includes/header-log
         
         .order.section
           form(action="")
@@ -22,210 +24,91 @@ block main
               h2.title.title--h1.title--tac Новое отправление
             
               .order__form 
-                .order__input-wrap 
-                  
-                  .input-wrap
-                    .dropdown-info
-                      label(for="name-shop") Название интернет-магазина
-                    .input.input--bordered
-                      input(type='text' id="name-shop") 
 
-
-                  .input-wrap
-                    .dropdown-info
-                      label(for="shipment-name")  Название отправки (необязательно)
-                      span
-                        | ?
-                        .dropdown-info__hidden-text
-                          | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
-                    .input.input--bordered
-                      input(type='text' id="shipment-name") 
-
-                h2 Склад замовлення
+                .input-wrap
+                  .dropdown-info
+                    label(for="track-number") Трекинг номер
+                  .input.input--bordered
+                    input(type='text' id="track-number") 
                 
-                .order__input-wrap.order__input-wrap--copied 
-                  
-                  .copied-wrap
-                    .input-wrap
-                      .dropdown-info
-                        label(for="classification") Классификация товара
-                        span
-                          | ?
-                          .dropdown-info__hidden-text
-                            | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
-                      .input.input--bordered
-                        input(type='text' id="classification") 
-
-                    .input-wrap
-                      .dropdown-info
-                        label(for="name-product") Название товара (латиницей)
-                      .input.input--bordered
-                        input(type='text' id="name-product") 
-
-                    .input-wrap.sm
-                      .dropdown-info
-                        label(for="count") Количество
-                      .input.input--bordered.input--counter
+                .input-wrap
+                  .dropdown-info
+                    label(for="desc") Описание 
+                      .require &#10059;
+                  .input.input--bordered
+                    input(type='text' id="desc") 
+                
+                .input-wrap
+                  .dropdown-info
+                    label(for="cost") Стоимость
+                      .require &#10059;
+                  .input.input--bordered
+                    input(type='text' id="cost") 
+                
+                .input-wrap
+                  .dropdown-info Выберите страну
+                    .require &#10059;             
+                  .input.input--select.input--country-select.input--bordered
+                    .input__select.select-js
+                      .input__select-hidden
+                        input(type="hidden" data-val="" name="country")
+                      .input__select-selected
+                        .input__select-selected-price(data-selectedprice="12" data-exchangeRatesKg="87.52") 
+                        .input__select-selected-flag 
+                          img(src="images/dist/us.svg", alt="") 
+                        span.output США
+                        i.angle
+                      .input__select-dropdown 
                         
-                        .count-minus.disabled 
-                        span
-                          input.counter(type='number' value='1')
-                        .count-plus 
+                        .input__select-option.input__select-option--country(data-val="США" data-price="12")
+                          .input__select-option-flag
+                            img(src="images/dist/us.svg", alt="")
+                          | США
                         
-                    .input-wrap.sm
-                      .dropdown-info
-                        label(for="cost") Стоимость
-                        span
-                          | ?
-                          .dropdown-info__hidden-text
-                            | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
-                      .input.input--bordered
-                        input(type='text' id="count" value="0,00") 
-
-                    //- .close
-                    //-   svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none')
-                    //-     path(d='M21 2.64111L3.28251 20.3586' stroke='black')
-                    //-     path(d='M21 20.3589L3.28251 2.6414' stroke='black')
-
-                  div
-                    input(type="checkbox" id="no-in-list")
-                    label(for="no-in-list") Нет в перечне      
-
-                .order__input-wrap.order__input-wrap--copied 
-                  
-                  .copied-wrap
-                    .input-wrap
-                      .dropdown-info
-                        label(for="classification") Классификация товара 
-                        span
-                          | ?
-                          .dropdown-info__hidden-text
-                            | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
-                      .input.input--bordered
-                        input(type='text' id="classification") 
-
-                    .input-wrap
-                      .dropdown-info
-                        label(for="name-product") Название товара (латиницей)
-                      .input.input--bordered
-                        input(type='text' id="name-product") 
-
-                    .input-wrap.sm
-                      .dropdown-info
-                        label(for="count") Количество
-                      .input.input--bordered.input--counter
+                        .input__select-option.input__select-option--country.soon(data-val="Германия" data-price="10")
+                          .input__select-option-flag
+                            img(src="images/dist/de.svg", alt="")
+                          | Германия (Скоро)
                         
-                        .count-minus.disabled 
-                        span
-                          input.counter(type='number' value='1')
-                        .count-plus 
+                        .input__select-option.input__select-option--country.soon(data-val="Турция" data-price="5")
+                          .input__select-option-flag
+                            img(src="images/dist/tr.svg", alt="")
+                          | Турция (Скоро)
+
+                .input-wrap
+                  .dropdown-info
+                    label(for="cost") Вебсайт
+                      .require &#10059;
+                  .input.input--bordered
+                    input(type='text' id="cost")
+
+                .input-wrap
+                  .dropdown-info Служба доставки
+                    .require &#10059;             
+                  .input.input--select.input--country-select.input--bordered
+                    .input__select.select-js
+                      .input__select-hidden
+                        input(type="hidden" data-val="" name="delivery")
+                      .input__select-selected
+                        span.output delivery 1
+                        i.angle
+                      .input__select-dropdown 
                         
-                    .input-wrap.sm
-                      .dropdown-info
-                        label(for="cost") Стоимость
-                        span
-                          | ?
-                          .dropdown-info__hidden-text
-                            | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
-                      .input.input--bordered
-                        input(type='text' id="count" value="0,00") 
-
-                    .close
-                      svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none')
-                        path(d='M21 2.64111L3.28251 20.3586' stroke='black')
-                        path(d='M21 20.3589L3.28251 2.6414' stroke='black')
-
-                  div
-                    input(type="checkbox" id="no-in-list")
-                    label(for="no-in-list") Нет в перечне      
-
-                .order__input-wrap.order__input-wrap--copied 
-                  
-                  .copied-wrap
-                    .input-wrap
-                      .dropdown-info
-                        label(for="classification") Классификация товара
-                        span
-                          | ?
-                          .dropdown-info__hidden-text
-                            | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
-                      .input.input--bordered
-                        input(type='text' id="classification") 
-
-                    .input-wrap
-                      .dropdown-info
-                        label(for="name-product") Название товара (латиницей)
-                      .input.input--bordered
-                        input(type='text' id="name-product") 
-
-                    .input-wrap.sm
-                      .dropdown-info
-                        label(for="count") Количество
-                      .input.input--bordered.input--counter
+                        .input__select-option.input__select-option--country(data-val="delivery 1") delivery 1
                         
-                        .count-minus.disabled 
-                        span
-                          input.counter(type='number' value='1')
-                        .count-plus 
+                        .input__select-option.input__select-option--country(data-val="delivery 2") delivery 2
                         
-                    .input-wrap.sm
-                      .dropdown-info
-                        label(for="cost") Стоимость
-                        span
-                          | ?
-                          .dropdown-info__hidden-text
-                            | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas eveniet unde esse, illum alias sint repudiandae quidem beatae nemo.
-                      .input.input--bordered
-                        input(type='text' id="count" value="0,00") 
+                        .input__select-option.input__select-option--country(data-val="delivery 3") delivery 3    
 
-                    .close
-                      svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none')
-                        path(d='M21 2.64111L3.28251 20.3586' stroke='black')
-                        path(d='M21 20.3589L3.28251 2.6414' stroke='black')
+                .input-wrap
+                  .dropdown-info
+                    label(for="cost") Комментарий
+                  .input.input--bordered
+                    input(type='text' id="cost")
 
-                  div
-                    input(type="checkbox" id="no-in-list")
-                    label(for="no-in-list") Нет в перечне      
+                button(type="submit").btn Сохранить
 
-                .order__add-product
-                  span 
-                  p 
-                    b еще один товар
 
-              
-            .order__track-number
-              .container 
-                .order__track-number
-                  .order__track-number-col
-                    .order__track-input
-                      .input-wrap
-                        .dropdown-info
-                          label(for="track-number") Трек-номер
-                        .input
-                          input(type='text' id="track-number") 
-                  
-                  .order__track-number-col
-                    .order__track-number-info 
-                      p Ще не отримали трек номер? Створіть відправлення та додайте трек номер пізніше. Без трек номеру ми не зможемо доставити вашу посилку
-                    
-                    .order__track-number-more
-                      i.angle 
-
-                .order__track-number-hidden
-                  p Tracking Number – це ідентифікатор вашого відправлення.
-                    | Ви отримаєте його від інтернет-магазину електронною поштою, коли замовлення сформовано та оплачено.
-
-                  p Він не містить дефісів, тире або інших спеціальних символів. Зазвичай виглядає так: 9405509699938860829083. Крім цифр, в трек-номері може бути одна або кілька літер: TBA094490876000.
-                  
-                  p tracking number example
-                  
-                  p Не вказуйте в цьому полі номер замовлення (order number), який виглядає ось так: ORDER #108-9223429-1685032 (Amazon) або так: Item number 112122004175 (ebay).
-
-                  p Якщо інтернет-магазин не надає трек-номер, будь-ласка, дочекайтеся електронного листа від Nova Poshta Shopping з проханням зареєструвати відправлення
-            
-            .container
-              .order__btn-wrap    
-                a.btn(href="#") Сохранить отправку 
 
     include includes/prohibitedPopup
     include includes/footer
